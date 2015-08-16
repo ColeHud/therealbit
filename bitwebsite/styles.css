@@ -22,16 +22,24 @@ video {
 }
 
 #polina { 
-  font-family: Agenda-Light, Agenda Light, Agenda, Arial Narrow, sans-serif;
+  font-family: 'Indie Flower', cursive;
   font-weight:100; 
-  background: rgba(0,0,0,0.3);
+  background: rgba(0,0,0,0.65);
   color: white;
-  padding: 2rem;
-  width: 33%;
+  padding: 1rem;
+  width: 55%;
   margin:2rem;
   float: right;
   font-size: 1.2rem;
 }
+
+<style type="text/css">
+
+a:link {color: #f39c12; text-decoration: underline; }
+a:active {color: #f39c12; text-decoration: underline; }
+a:visited {color: #f39c12; text-decoration: underline; }
+a:hover {color: #f39c12; text-decoration: none; }
+</style>
 
 #polina button { 
   display: block;
