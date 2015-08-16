@@ -142,6 +142,10 @@ class PaymentHandlerViewController: UIViewController
             }
             
             task.resume()
+            
+            //open the link to your account
+            var linkInSpecialForm = NSURL(string: link)
+            UIApplication.sharedApplication().openURL(linkInSpecialForm!)
         }
     }
     
@@ -164,7 +168,11 @@ class PaymentHandlerViewController: UIViewController
         }
         else
         {
-            let url = NSURL(string: "https://blockchain.info/merchant/4b8cd8e9-9480-44cc-b7f2-527e98ee3287/payment?password=ThisIsMyMainPassword123%21&second_password=ThisIsMyOptionalSecondPassword123%21&address=1A8JiWcwvpY7tAopUkSnGuEYHmzGYfZPiq&amount=100000000&from=1JzSZFs2DQke2B3S4pBxaNaMzzVZaG4Cqh&fee=10000&note=This%2520is%2520my%2520note%21")!
+            let theAccountOfColeHudson = "1NuL6cSsndGRCEk9dijAa9v7ysqo4qQax5"
+            let bitcoinAmount = 0.0010 //amount to be paid in bitcoin ~25 cents
+            let amount = bitcoinAmount * 100000000
+            
+            let url = NSURL(string: "https://blockchain.info/merchant/\(guid)/payment?password=\(password)&address=\(theAccountOfColeHudson)&amount=\(amount)&from=\(address)&fee=10000&api_code=dbcaa55e-9fa1-48e1-aa9d-4d28814ceda8")!
             let request = NSMutableURLRequest(URL: url)
             
             let session = NSURLSession.sharedSession()
@@ -172,6 +180,13 @@ class PaymentHandlerViewController: UIViewController
                 
                 if error != nil {
                     // Handle error...
+                    var alert = UIAlertView(title: "Error", message: "Something went wrong", delegate: nil, cancelButtonTitle: "ok")
+                    
+                    // Move to the UI thread
+                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                        // Show the alert
+                        alert.show()
+                    })
                     return
                 }
                 
@@ -181,6 +196,8 @@ class PaymentHandlerViewController: UIViewController
             }
             
             task.resume()
+            performSegueWithIdentifier("gameOn", sender: self)
+
         }
         
         
