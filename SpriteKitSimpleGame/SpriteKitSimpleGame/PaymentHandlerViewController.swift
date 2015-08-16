@@ -11,31 +11,13 @@ import UIKit
 class PaymentHandlerViewController: UIViewController
 {
     //views
-    @IBOutlet var segmentedControl: UISegmentedControl!
+    @IBOutlet var backButton: UIButton!
     @IBOutlet var emailAndAddress: UITextField!
     @IBOutlet var passwordField: UITextField!
     @IBOutlet var loginAndSignup: UIButton!
     @IBOutlet var twentyFiveCentButton: UIButton!
     var selectedSegment = 0
     
-    @IBAction func segmentedControlValueChanged(sender: UISegmentedControl)
-    {
-        switch segmentedControl.selectedSegmentIndex
-        {
-        case 0:
-            println("new wallet")
-            selectedSegment = 0
-            emailAndAddress.placeholder = "email"
-        case 1:
-            println("address")
-            selectedSegment = 1
-            emailAndAddress.placeholder = "bitcoin wallet address"
-        default:
-            println("new wallet")
-            selectedSegment = 0
-            emailAndAddress.placeholder = "email"
-        }
-    }
     
     //dismiss the keyboard
     func dismissKeyboard()
@@ -53,6 +35,12 @@ class PaymentHandlerViewController: UIViewController
         var touchDismiss: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         touchDismiss.numberOfTapsRequired = 1
         self.view.addGestureRecognizer(touchDismiss)
+        
+        //set up the back button
+        backButton.backgroundColor = UIColor.whiteColor()
+        backButton.layer.cornerRadius = 5
+        backButton.layer.borderWidth = 1
+        backButton.layer.borderColor = UIColor.blackColor().CGColor
         
     }
     
