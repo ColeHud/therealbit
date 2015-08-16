@@ -26,5 +26,5 @@ Art, Sprites, Icon, and Mockups were Designed by Tim Kaing
 **We hope you enjoy our App!**<br> <br>
 
 **And a special thanks to..."
-Major League Hacking and their wonderful sponsors for making this incredible event possible!
+Major League Hacking and their wonderful sponsors for making this incredible event possible! <br> <br> 
 <img src="https://github.com/ColeHud/therealbit/blob/master/Assets/App_Icon.png" width="250">
