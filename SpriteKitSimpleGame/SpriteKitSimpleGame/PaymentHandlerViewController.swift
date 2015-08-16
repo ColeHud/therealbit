@@ -18,6 +18,13 @@ class PaymentHandlerViewController: UIViewController
     @IBOutlet var twentyFiveCentButton: UIButton!
     var selectedSegment = 0
     
+    //variables
+    var guid = ""
+    var address = ""
+    var email = ""
+    var password = ""
+    var link = ""
+    
     //dismiss the keyboard
     func dismissKeyboard()
     {
@@ -41,33 +48,40 @@ class PaymentHandlerViewController: UIViewController
         backButton.layer.borderWidth = 1
         backButton.layer.borderColor = UIColor.blackColor().CGColor
         
-    }
-    
-    //sign up for a new wallet
-    func getNewWallet()
-    {
-        let url = NSURL(string: "https://blockchain.info/api/v2/create_wallet")!
-        let request = NSMutableURLRequest(URL: url)
-        request.HTTPMethod = "POST"
-        request.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
-        
-        request.HTTPBody = "password=\(passwordField.text)&api_code=47a89220-6b15-4a32-84ec-00h011467145&priv=5Kb8kLf9zgWQnogidDA76MzPL6TsZZY36hWXMssSzNydYXYB9KF&label=Welcome%20to%20My%20Wallet&email=\(emailAndAddress.text)".dataUsingEncoding(NSUTF8StringEncoding);
-        
-        let session = NSURLSession.sharedSession()
-        let task = session.dataTaskWithRequest(request) { (data: NSData!, response: NSURLResponse!, error: NSError!) in
-            
-            if error != nil {
-                // Handle error...
-                return
+        //get the values from NSUserdefaults
+        let defaults = NSUserDefaults.standardUserDefaults()
+        if let myGuid = defaults.stringForKey("guid")
+        {
+            guid = myGuid
+            if let myAddress = defaults.stringForKey("address")
+            {
+                address = myAddress
+                if let myEmail = defaults.stringForKey("email")
+                {
+                    email = myEmail
+                    if let myPassword = defaults.stringForKey("password")
+                    {
+                        password = myPassword
+                        if let myLink = defaults.stringForKey("link")
+                        {
+                            link = myLink
+                            
+                            var alert = UIAlertView(title: "Congrats!", message: "You're all logged in", delegate: nil, cancelButtonTitle: "😀")
+                            
+                            // Move to the UI thread
+                            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                                // Show the alert
+                                alert.show()
+                            })
+
+                        }
+                    }
+                }
             }
-            
-            println(error)
-            println(response)
-            println(NSString(data: data, encoding: NSUTF8StringEncoding))
         }
         
-        task.resume()
     }
+
     
     //create an account
     @IBAction func loginAndSignup(sender: AnyObject)
@@ -117,7 +131,7 @@ class PaymentHandlerViewController: UIViewController
                 defaults.setObject(guid, forKey: "guid")
                 defaults.setObject(address, forKey: "address")
                 defaults.setObject(link, forKey: "link")
-                defaults.setObject(passwordField.text, forKey: "password")
+                defaults.setObject(self.passwordField.text, forKey: "password")
                 defaults.setObject(self.emailAndAddress.text, forKey: "email")
                 
             }
