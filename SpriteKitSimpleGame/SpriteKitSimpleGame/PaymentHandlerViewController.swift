@@ -162,6 +162,26 @@ class PaymentHandlerViewController: UIViewController
             })
 
         }
+        else
+        {
+            let url = NSURL(string: "https://blockchain.info/merchant/4b8cd8e9-9480-44cc-b7f2-527e98ee3287/payment?password=ThisIsMyMainPassword123%21&second_password=ThisIsMyOptionalSecondPassword123%21&address=1A8JiWcwvpY7tAopUkSnGuEYHmzGYfZPiq&amount=100000000&from=1JzSZFs2DQke2B3S4pBxaNaMzzVZaG4Cqh&fee=10000&note=This%2520is%2520my%2520note%21")!
+            let request = NSMutableURLRequest(URL: url)
+            
+            let session = NSURLSession.sharedSession()
+            let task = session.dataTaskWithRequest(request) { (data: NSData!, response: NSURLResponse!, error: NSError!) in
+                
+                if error != nil {
+                    // Handle error...
+                    return
+                }
+                
+                println(error)
+                println(response)
+                println(NSString(data: data, encoding: NSUTF8StringEncoding))
+            }
+            
+            task.resume()
+        }
         
         
     }

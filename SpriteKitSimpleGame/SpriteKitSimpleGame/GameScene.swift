@@ -182,16 +182,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate
         if(self.score > highScore)
         {
             println("you have the high score")
-            /*
             
-            HIGH SCORES NEED SOME FORM OF ID
-            
-            
-            */
-            //save the new high score
-            if let highScoreQueryObject = highScoreQueryObject{
-                highScoreQueryObject["score"] = self.score
-                highScoreQueryObject.saveInBackground()
+            //get the user's wallet address from nsuserdefaults
+            let defaults = NSUserDefaults.standardUserDefaults()
+            if let address = defaults.stringForKey("address")
+            {
+                //save the new high score
+                if let highScoreQueryObject = highScoreQueryObject{
+                    highScoreQueryObject["score"] = self.score
+                    highScoreQueryObject["address"] = address
+                    highScoreQueryObject.saveInBackground()
+                }
             }
             return true
         }
