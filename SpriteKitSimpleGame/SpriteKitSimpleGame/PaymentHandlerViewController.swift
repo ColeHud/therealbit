@@ -261,8 +261,7 @@ class PaymentHandlerViewController: UIViewController
             {
                 println("else statement")
                 let theAccountOfColeHudson = "1NuL6cSsndGRCEk9dijAa9v7ysqo4qQax5"
-                let bitcoinAmount = 0.0010 //amount to be paid in bitcoin ~25 cents
-                let amount = bitcoinAmount * 100000000
+                let amount:Int = Int(self.bitcoinInTwentyFiveCents * 100000000)
                 
                 let url = NSURL(string: "https://blockchain.info/merchant/\(guid)/payment?password=\(password)&address=\(theAccountOfColeHudson)&amount=\(amount)&from=\(address)&fee=10000&api_code=dbcaa55e-9fa1-48e1-aa9d-4d28814ceda8")!
                 let request = NSMutableURLRequest(URL: url)
@@ -282,9 +281,9 @@ class PaymentHandlerViewController: UIViewController
                         return
                     }
                     
-                    println(error)
+                    
                     println(response)
-                    println(NSString(data: data, encoding: NSUTF8StringEncoding))
+                    //println(NSString(data: data, encoding: NSUTF8StringEncoding))
                 }
                 
                 task.resume()
