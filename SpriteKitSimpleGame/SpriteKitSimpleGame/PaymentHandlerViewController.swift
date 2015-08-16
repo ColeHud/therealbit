@@ -113,7 +113,12 @@ class PaymentHandlerViewController: UIViewController
                 var link = json!.objectForKey("link")
                 
                 //save to nsUserdefaults
-                
+                let defaults = NSUserDefaults.standardUserDefaults()
+                defaults.setObject(guid, forKey: "guid")
+                defaults.setObject(address, forKey: "address")
+                defaults.setObject(link, forKey: "link")
+                defaults.setObject(passwordField.text, forKey: "password")
+                defaults.setObject(self.emailAndAddress.text, forKey: "email")
                 
             }
             
