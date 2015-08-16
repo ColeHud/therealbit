@@ -107,6 +107,13 @@ class PaymentHandlerViewController: UIViewController
                 var error = NSErrorPointer()
                 var json = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: error)
                 
+                //values returned by server
+                var guid = json!.objectForKey("guid")
+                var address = json!.objectForKey("address")
+                var link = json!.objectForKey("link")
+                
+                //save to nsUserdefaults
+                
                 
             }
             
