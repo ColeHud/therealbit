@@ -137,7 +137,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate
         runAction(SKAction.repeatActionForever(
             SKAction.sequence([
                 SKAction.runBlock(addCoin),
-                SKAction.waitForDuration(13.0)
+                SKAction.waitForDuration(10.0)
                 ])
             ))
         
@@ -145,7 +145,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate
         runAction(SKAction.repeatActionForever(
             SKAction.sequence([
                 SKAction.runBlock(addBill),
-                SKAction.waitForDuration(3.0)
+                SKAction.waitForDuration(1.5)
                 ])
             ))
         
@@ -224,7 +224,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate
         addChild(coin)
         
         // Determine speed of the monster
-        let actualDuration = random(min: CGFloat(8.0), max: CGFloat(20.0))
+        let actualDuration = random(min: CGFloat(2.0), max: CGFloat(10.0))
         
         // Create the actions
         let actionMove = SKAction.moveTo(CGPoint(x: actualX, y: 0 - coin.size.height), duration: NSTimeInterval(actualDuration))
@@ -265,7 +265,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate
         addChild(bill)
         
         // Determine speed of the monster
-        let actualDuration = random(min: CGFloat(8.0), max: CGFloat(20.0))
+        let actualDuration = random(min: CGFloat(4.0), max: CGFloat(15.0))
         
         // Create the actions
         let actionMove = SKAction.moveTo(CGPoint(x: actualX, y: 0 - bill.size.height), duration: NSTimeInterval(actualDuration))
@@ -298,7 +298,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate
         
         //calculate the time it takes to move that distance
         var horizontalDistance = abs(touchLocation.x - player.position.x)
-        var multiplier = horizontalDistance / 100.0
+        var multiplier = horizontalDistance / 175.0
         var actualDuration:NSTimeInterval = NSTimeInterval(multiplier)
         var actionMove = SKAction.moveTo(targetPoint, duration: actualDuration)
         player.runAction(actionMove)
