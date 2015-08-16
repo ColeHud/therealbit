@@ -7,11 +7,19 @@
 //
 
 import UIKit
+import Parse
 
 class HighScoreViewController: UIViewController
 {
+    @IBOutlet var label: UILabel!
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        
+        //get high score from parse
+        var query = PFQuery(className: "HighScore")
+        var queryObject = query.getFirstObject()
+        let highScore = queryObject?.valueForKey("score") as! Int
+        label.text = "\(highScore)"
     }
 }

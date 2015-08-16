@@ -82,71 +82,41 @@ class PaymentHandlerViewController: UIViewController
         task.resume()
     }
     
-    //login or signup depending on the selection
+    //create an account
     @IBAction func loginAndSignup(sender: AnyObject)
     {
         if(selectedSegment == 0)//Create a new wallet
         {
-            RestHelper.post(["password": passwordField.text, "api_code": RestHelper.apicode, "priv": "5Kb8kLf9zgWQnogidDA76MzPL6TsZZY36hWXMssSzNydYXYB9KF", "label": "Welcome%20to%20My%20Wallet", "email": emailAndAddress.text], url: "https://blockchain.info/api/v2/create_wallet") { (succeeded: Bool, msg: String) -> () in
-                if (!succeeded)
+            //get
+            println("Stuff")
+            let url = NSURL(string:"https://blockchain.info/api/v2/create_wallet?password=\(passwordField.text)%21&api_code=dbcaa55e-9fa1-48e1-aa9d-4d28814ceda8&email=\(emailAndAddress.text)")!
+            
+            let request = NSMutableURLRequest(URL: url)
+            
+            let session = NSURLSession.sharedSession()
+            let task = session.dataTaskWithRequest(request) { (data: NSData!, response: NSURLResponse!, error: NSError!) in
+                
+                if error != nil
                 {
-                    var alert = UIAlertView(
-                        title: "Error",
-                        message: msg,
-                        delegate: nil,
-                        cancelButtonTitle: "Ok"
-                    )
-                    
-                    // Move to the UI thread
-                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                        // Show the alert
-                        alert.show()
-                    })
+                    // Handle error...
+                    println("yeah, there was an error")
+                    println(error)
+                    println(response)
+                    println(NSString(data: data, encoding: NSUTF8StringEncoding))
                     return
                 }
-                println("YOURE IN!")
-                println(msg)
-                
-                //set the user defaults
-                let defaults = NSUserDefaults.standardUserDefaults()
-                defaults.setObject(self.emailAndAddress.text, forKey: "email")
-                defaults.setObject(self.passwordField.text, forKey: "password")
+                println(response)
+                //println(NSString(data: data, encoding: NSUTF8StringEncoding))
             }
-        }
-        else//sign in with an existing wallet
-        {
-            //check to make sure that the address and password match
+            
+            task.resume()
         }
     }
     
     //pay 25 cents and start the game
     @IBAction func payTwentyFiveCents(sender: AnyObject)
     {
-        RestHelper.post(["password": passwordField.text, "api_code": RestHelper.apicode, "priv": "5Kb8kLf9zgWQnogidDA76MzPL6TsZZY36hWXMssSzNydYXYB9KF", "label": "Welcome%20to%20My%20Wallet", "email": emailAndAddress.text], url: "https://blockchain.info/api/v2/create_wallet") { (succeeded: Bool, msg: String) -> () in
-            if (!succeeded)
-            {
-                var alert = UIAlertView(
-                    title: "Error",
-                    message: msg,
-                    delegate: nil,
-                    cancelButtonTitle: "Ok"
-                )
-                
-                // Move to the UI thread
-                dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                    // Show the alert
-                    alert.show()
-                })
-                return
-            }
-            println("YOURE IN!")
-            println(msg)
-            
-            //set the user defaults
-            let defaults = NSUserDefaults.standardUserDefaults()
-            defaults.setObject(self.emailAndAddress.text, forKey: "email")
-            defaults.setObject(self.passwordField.text, forKey: "password")
-        }
+        
         
     }
     

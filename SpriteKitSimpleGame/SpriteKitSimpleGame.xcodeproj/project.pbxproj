@@ -25,6 +25,7 @@
 		ED535F751B8011AE00FF5C2B /* play_button.png in Resources */ = {isa = PBXBuildFile; fileRef = ED535F721B8011AE00FF5C2B /* play_button.png */; };
 		ED535F761B8011AE00FF5C2B /* score_button.png in Resources */ = {isa = PBXBuildFile; fileRef = ED535F731B8011AE00FF5C2B /* score_button.png */; };
 		ED6305601B80747F00A53027 /* Retro Computer_DEMO.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ED63055F1B80736400A53027 /* Retro Computer_DEMO.ttf */; };
+		ED6305621B8083B300A53027 /* high_score_screen.png in Resources */ = {isa = PBXBuildFile; fileRef = ED6305611B8083B300A53027 /* high_score_screen.png */; };
 		EDCA63D31B7F770B00177C97 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCA63D21B7F770B00177C97 /* LoginViewController.swift */; };
 		EDCA63E11B7F920100177C97 /* bitplayer.png in Resources */ = {isa = PBXBuildFile; fileRef = EDCA63E01B7F920100177C97 /* bitplayer.png */; };
 		EDCA63E31B7FA26300177C97 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = EDCA63E21B7FA26300177C97 /* background.png */; };
@@ -78,6 +79,7 @@
 		ED535F721B8011AE00FF5C2B /* play_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = play_button.png; path = ../../Assets/play_button.png; sourceTree = "<group>"; };
 		ED535F731B8011AE00FF5C2B /* score_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = score_button.png; path = ../../Assets/score_button.png; sourceTree = "<group>"; };
 		ED63055F1B80736400A53027 /* Retro Computer_DEMO.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Retro Computer_DEMO.ttf"; sourceTree = SOURCE_ROOT; };
+		ED6305611B8083B300A53027 /* high_score_screen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = high_score_screen.png; path = ../../Assets/high_score_screen.png; sourceTree = "<group>"; };
 		EDCA63D21B7F770B00177C97 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		EDCA63E01B7F920100177C97 /* bitplayer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bitplayer.png; path = sprites.atlas/bitplayer.png; sourceTree = "<group>"; };
 		EDCA63E21B7FA26300177C97 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background.png; path = Images.xcassets/background.png; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 				ED535F721B8011AE00FF5C2B /* play_button.png */,
 				ED535F731B8011AE00FF5C2B /* score_button.png */,
 				ED3828461B801B40007E6976 /* mainScreenNew.png */,
+				ED6305611B8083B300A53027 /* high_score_screen.png */,
 				357164EF19DB1E4800ED38A9 /* Images.xcassets */,
 				ED63055F1B80736400A53027 /* Retro Computer_DEMO.ttf */,
 				357164E619DB1E4800ED38A9 /* GameScene.sks */,
@@ -304,6 +307,7 @@
 			files = (
 				ED535F741B8011AE00FF5C2B /* about_button.png in Resources */,
 				3571650E19DB1F5500ED38A9 /* sprites.atlas in Resources */,
+				ED6305621B8083B300A53027 /* high_score_screen.png in Resources */,
 				3571650C19DB1F5500ED38A9 /* background-music-aac.caf in Resources */,
 				357164F319DB1E4800ED38A9 /* LaunchScreen.xib in Resources */,
 				357164F019DB1E4800ED38A9 /* Images.xcassets in Resources */,
