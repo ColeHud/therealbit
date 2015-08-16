@@ -38,21 +38,9 @@ class PaymentHandlerViewController: UIViewController
         emailAndAddress.resignFirstResponder()
     }
     
-    override func viewDidLoad()
+    //check if the values are stored and alert the user
+    func valuesStored()
     {
-        super.viewDidLoad()
-        
-        //set up keyboard dismiss
-        var touchDismiss: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
-        touchDismiss.numberOfTapsRequired = 1
-        self.view.addGestureRecognizer(touchDismiss)
-        
-        //set up the back button
-        backButton.backgroundColor = UIColor.whiteColor()
-        backButton.layer.cornerRadius = 5
-        backButton.layer.borderWidth = 1
-        backButton.layer.borderColor = UIColor.blackColor().CGColor
-        
         //get the values from NSUserdefaults
         let defaults = NSUserDefaults.standardUserDefaults()
         if let myGuid = defaults.stringForKey("guid")
@@ -78,12 +66,31 @@ class PaymentHandlerViewController: UIViewController
                                 // Show the alert
                                 alert.show()
                             })
-
+                            
                         }
                     }
                 }
             }
         }
+
+    }
+    
+    override func viewDidLoad()
+    {
+        super.viewDidLoad()
+        
+        //set up keyboard dismiss
+        var touchDismiss: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        touchDismiss.numberOfTapsRequired = 1
+        self.view.addGestureRecognizer(touchDismiss)
+        
+        //set up the back button
+        backButton.backgroundColor = UIColor.whiteColor()
+        backButton.layer.cornerRadius = 5
+        backButton.layer.borderWidth = 1
+        backButton.layer.borderColor = UIColor.blackColor().CGColor
+        
+        self.valuesStored()
         
     }
 
@@ -95,7 +102,7 @@ class PaymentHandlerViewController: UIViewController
         {
             //get
             println("Stuff")
-            let url = NSURL(string:"https://blockchain.info/api/v2/create_wallet?password=\(passwordField.text)%21&api_code=dbcaa55e-9fa1-48e1-aa9d-4d28814ceda8&email=\(emailAndAddress.text)")!
+            let url = NSURL(string:"https://blockchain.info/api/v2/create_wallet?password=\(passwordField.text)&api_code=dbcaa55e-9fa1-48e1-aa9d-4d28814ceda8&email=\(emailAndAddress.text)")!
             
             let request = NSMutableURLRequest(URL: url)
             
@@ -139,20 +146,85 @@ class PaymentHandlerViewController: UIViewController
                 defaults.setObject(self.passwordField.text, forKey: "password")
                 defaults.setObject(self.emailAndAddress.text, forKey: "email")
                 
+                //open the link to your account
+                var myURL = NSURL(string: link as! String)
+                UIApplication.sharedApplication().openURL(myURL!)
+                
             }
             
             task.resume()
-            
-            //open the link to your account
-            var linkInSpecialForm = NSURL(string: link)
-            UIApplication.sharedApplication().openURL(linkInSpecialForm!)
         }
+        self.valuesStored()
+    }
+    
+    func twentyFiveCentsInBitcoin() -> Double
+    {
+        let url = NSURL(string: "https://blockchain.info/tobtc?currency=USD&value=.25&api_code=dbcaa55e-9fa1-48e1-aa9d-4d28814ceda8")!
+        let request = NSMutableURLRequest(URL: url)
+        
+        let session = NSURLSession.sharedSession()
+        let task = session.dataTaskWithRequest(request) { (data: NSData!, response: NSURLResponse!, error: NSError!) in
+            
+            if error != nil {
+                // Handle error...
+                return
+            }
+            
+            println(error)
+            println(response)
+            println(NSString(data: data, encoding: NSUTF8StringEncoding))
+            
+            var error = NSErrorPointer()
+            var json: AnyObject? = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: error)
+            
+            let twentyFiveCentsInBitcoin = json!.objectForKey("") as! Double
+            println("25 cents is equal to \(twentyFiveCentsInBitcoin) bitcoin")
+        }
+        
+        return 1.0
+        task.resume()
+    }
+    
+    func isPositiveBalance() -> Bool
+    {
+        //check and see if the user has any funds
+        var balanceIsGreaterThanZero = false
+        let url = NSURL(string: "https://blockchain.info/merchant/\(guid)/balance?password=\(password)&api_code=dbcaa55e-9fa1-48e1-aa9d-4d28814ceda8")!
+        let request = NSMutableURLRequest(URL: url)
+        
+        let session = NSURLSession.sharedSession()
+        let task = session.dataTaskWithRequest(request) { (data: NSData!, response: NSURLResponse!, error: NSError!) in
+            
+            if error != nil {
+                // Handle error...
+                return
+            }
+            
+            println(error)
+            println(response)
+            println(NSString(data: data, encoding: NSUTF8StringEncoding))
+            
+            var error = NSErrorPointer()
+            var json: AnyObject? = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: error)
+            
+            let balance = json!.objectForKey("balance") as! Double
+            
+            if(balance > 0)
+            {
+                balanceIsGreaterThanZero = true
+            }
+        }
+        
+        task.resume()
+        return balanceIsGreaterThanZero
     }
     
     
     //pay 25 cents and start the game
     @IBAction func payTwentyFiveCents(sender: AnyObject)
     {
+        self.twentyFiveCentsInBitcoin()
+        
         //the user hasn't signed in yet
         if(self.guid == "" || guid.length < 2)
         {
@@ -168,35 +240,53 @@ class PaymentHandlerViewController: UIViewController
         }
         else
         {
-            let theAccountOfColeHudson = "1NuL6cSsndGRCEk9dijAa9v7ysqo4qQax5"
-            let bitcoinAmount = 0.0010 //amount to be paid in bitcoin ~25 cents
-            let amount = bitcoinAmount * 100000000
             
-            let url = NSURL(string: "https://blockchain.info/merchant/\(guid)/payment?password=\(password)&address=\(theAccountOfColeHudson)&amount=\(amount)&from=\(address)&fee=10000&api_code=dbcaa55e-9fa1-48e1-aa9d-4d28814ceda8")!
-            let request = NSMutableURLRequest(URL: url)
             
-            let session = NSURLSession.sharedSession()
-            let task = session.dataTaskWithRequest(request) { (data: NSData!, response: NSURLResponse!, error: NSError!) in
+            if(isPositiveBalance() == false)
+            {
+                //alert the user
+                var alert = UIAlertView(title: "$$$", message: "You don't have enough money to play", delegate: nil, cancelButtonTitle: "ok")
                 
-                if error != nil {
-                    // Handle error...
-                    var alert = UIAlertView(title: "Error", message: "Something went wrong", delegate: nil, cancelButtonTitle: "ok")
+                // Move to the UI thread
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    // Show the alert
+                    alert.show()
+                })
+            }
+            else
+            {
+                println("else statement")
+                let theAccountOfColeHudson = "1NuL6cSsndGRCEk9dijAa9v7ysqo4qQax5"
+                let bitcoinAmount = 0.0010 //amount to be paid in bitcoin ~25 cents
+                let amount = bitcoinAmount * 100000000
+                
+                let url = NSURL(string: "https://blockchain.info/merchant/\(guid)/payment?password=\(password)&address=\(theAccountOfColeHudson)&amount=\(amount)&from=\(address)&fee=10000&api_code=dbcaa55e-9fa1-48e1-aa9d-4d28814ceda8")!
+                let request = NSMutableURLRequest(URL: url)
+                
+                let session = NSURLSession.sharedSession()
+                let task = session.dataTaskWithRequest(request) { (data: NSData!, response: NSURLResponse!, error: NSError!) in
                     
-                    // Move to the UI thread
-                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                        // Show the alert
-                        alert.show()
-                    })
-                    return
+                    if error != nil {
+                        // Handle error...
+                        var alert = UIAlertView(title: "Error", message: "Something went wrong", delegate: nil, cancelButtonTitle: "ok")
+                        
+                        // Move to the UI thread
+                        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                            // Show the alert
+                            alert.show()
+                        })
+                        return
+                    }
+                    
+                    println(error)
+                    println(response)
+                    println(NSString(data: data, encoding: NSUTF8StringEncoding))
                 }
                 
-                println(error)
-                println(response)
-                println(NSString(data: data, encoding: NSUTF8StringEncoding))
+                task.resume()
+                performSegueWithIdentifier("gameOn", sender: self)
             }
             
-            task.resume()
-            performSegueWithIdentifier("gameOn", sender: self)
 
         }
         
