@@ -25,7 +25,7 @@ class GameOverScene: SKScene
     var message = won ? "You hold the HIGH SCORE!!!" : "Try again 😕"
     
     // 3
-    let label = SKLabelNode(fontNamed: "Helvetica")
+    let label = SKLabelNode(fontNamed: "Retro Computer_DEMO")
     label.text = message
     label.fontSize = 40
     label.fontColor = SKColor.blackColor()

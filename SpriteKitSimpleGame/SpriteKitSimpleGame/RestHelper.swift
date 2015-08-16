@@ -10,6 +10,9 @@ import Foundation
 
 class RestHelper: NSObject
 {
+    //variables
+    static var apicode = "dbcaa55e-9fa1-48e1-aa9d-4d28814ceda8"
+    
     //post request
     class func post(params : Dictionary<String, String>, url : String, postCompleted : (succeeded: Bool, msg: String) -> ())
     {

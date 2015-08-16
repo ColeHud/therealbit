@@ -7,6 +7,11 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Retro Computer_DEMO.ttf">
+            <string>RetroComputer</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--login-->
         <scene sceneID="5hS-uk-g4J">
@@ -62,7 +67,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <segue destination="sx4-lS-koG" kind="show" id="2TT-3m-guO"/>
+                                    <segue destination="LVB-YS-i5n" kind="show" id="mWh-Hb-KcY"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ppm-nb-Y6p" userLabel="about">
@@ -176,21 +181,19 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JNE-jn-Xi2">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <animations/>
+                                <fontDescription key="fontDescription" name="RetroComputer" family="Retro Computer" pointSize="40"/>
                                 <state key="normal" title="25¢">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <variation key="heightClass=compact" misplaced="YES">
-                                    <rect key="frame" x="287" y="350" width="27" height="30"/>
-                                </variation>
+                                <connections>
+                                    <action selector="payTwentyFiveCents:" destination="sx4-lS-koG" eventType="touchUpInside" id="dAq-V4-oaW"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fnT-Zm-WpW">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <variation key="heightClass=compact" misplaced="YES">
-                                    <rect key="frame" x="16" y="56" width="568" height="30"/>
-                                </variation>
                             </textField>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="y48-4X-Ct5">
                                 <rect key="frame" x="-61" y="-14" width="123" height="29"/>
@@ -199,9 +202,9 @@
                                     <segment title="Create a new Wallet"/>
                                     <segment title="Pay from existing wallet"/>
                                 </segments>
-                                <variation key="heightClass=compact" misplaced="YES">
-                                    <rect key="frame" x="143" y="20" width="315" height="29"/>
-                                </variation>
+                                <connections>
+                                    <action selector="segmentedControlValueChanged:" destination="sx4-lS-koG" eventType="valueChanged" id="jfV-Gl-hYB"/>
+                                </connections>
                             </segmentedControl>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tp8-ln-g5m">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
@@ -209,9 +212,6 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
-                                <variation key="heightClass=compact" misplaced="YES">
-                                    <rect key="frame" x="16" y="94" width="568" height="30"/>
-                                </variation>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bnv-lB-tJi">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -219,9 +219,9 @@
                                 <state key="normal" title="Login/SignUp">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <variation key="heightClass=compact" misplaced="YES">
-                                    <rect key="frame" x="253" y="132" width="95" height="30"/>
-                                </variation>
+                                <connections>
+                                    <action selector="loginAndSignup:" destination="sx4-lS-koG" eventType="touchUpInside" id="nKI-2A-vOP"/>
+                                </connections>
                             </button>
                         </subviews>
                         <animations/>
@@ -253,20 +253,20 @@
                                 <exclude reference="Bnv-lB-tJi"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="Abg-4R-3zU"/>
-                                <exclude reference="btX-yc-Xey"/>
-                                <exclude reference="dtD-4Q-UFO"/>
+                                <exclude reference="hBE-a3-rko"/>
                                 <exclude reference="ANx-gg-xBv"/>
                                 <exclude reference="IgK-IP-lII"/>
                                 <exclude reference="gKX-y8-6M8"/>
+                                <exclude reference="Abg-4R-3zU"/>
+                                <exclude reference="btX-yc-Xey"/>
+                                <exclude reference="dtD-4Q-UFO"/>
+                                <exclude reference="4Zp-3e-N8v"/>
+                                <exclude reference="yDO-bM-kip"/>
+                                <exclude reference="TW4-sS-u7F"/>
                                 <exclude reference="8gs-6l-ggp"/>
                                 <exclude reference="Ial-0I-PhJ"/>
                                 <exclude reference="a5F-Mm-jOA"/>
                                 <exclude reference="pT6-gL-grr"/>
-                                <exclude reference="4Zp-3e-N8v"/>
-                                <exclude reference="yDO-bM-kip"/>
-                                <exclude reference="hBE-a3-rko"/>
-                                <exclude reference="TW4-sS-u7F"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=compact">
@@ -278,20 +278,20 @@
                                 <include reference="Bnv-lB-tJi"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="Abg-4R-3zU"/>
-                                <include reference="btX-yc-Xey"/>
-                                <include reference="dtD-4Q-UFO"/>
+                                <include reference="hBE-a3-rko"/>
                                 <include reference="ANx-gg-xBv"/>
                                 <include reference="IgK-IP-lII"/>
                                 <include reference="gKX-y8-6M8"/>
+                                <include reference="Abg-4R-3zU"/>
+                                <include reference="btX-yc-Xey"/>
+                                <include reference="dtD-4Q-UFO"/>
+                                <include reference="4Zp-3e-N8v"/>
+                                <include reference="yDO-bM-kip"/>
+                                <include reference="TW4-sS-u7F"/>
                                 <include reference="8gs-6l-ggp"/>
                                 <include reference="Ial-0I-PhJ"/>
                                 <exclude reference="a5F-Mm-jOA"/>
                                 <exclude reference="pT6-gL-grr"/>
-                                <include reference="4Zp-3e-N8v"/>
-                                <include reference="yDO-bM-kip"/>
-                                <include reference="hBE-a3-rko"/>
-                                <include reference="TW4-sS-u7F"/>
                             </mask>
                         </variation>
                     </view>
@@ -356,4 +356,7 @@
         <image name="play_button" width="500" height="500"/>
         <image name="score_button" width="500" height="500"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="gfx-Pa-LWI"/>
+    </inferredMetricsTieBreakers>
 </document>

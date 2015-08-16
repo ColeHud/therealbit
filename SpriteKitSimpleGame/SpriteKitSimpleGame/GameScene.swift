@@ -137,7 +137,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate
         runAction(SKAction.repeatActionForever(
             SKAction.sequence([
                 SKAction.runBlock(addCoin),
-                SKAction.waitForDuration(10.0)
+                SKAction.waitForDuration(13.0)
                 ])
             ))
         
@@ -223,7 +223,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate
         addChild(coin)
         
         // Determine speed of the monster
-        let actualDuration = random(min: CGFloat(10.0), max: CGFloat(10.0))
+        let actualDuration = random(min: CGFloat(8.0), max: CGFloat(20.0))
         
         // Create the actions
         let actionMove = SKAction.moveTo(CGPoint(x: actualX, y: 0 - coin.size.height), duration: NSTimeInterval(actualDuration))
@@ -264,7 +264,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate
         addChild(bill)
         
         // Determine speed of the monster
-        let actualDuration = random(min: CGFloat(10.0), max: CGFloat(10.0))
+        let actualDuration = random(min: CGFloat(8.0), max: CGFloat(20.0))
         
         // Create the actions
         let actionMove = SKAction.moveTo(CGPoint(x: actualX, y: 0 - bill.size.height), duration: NSTimeInterval(actualDuration))
