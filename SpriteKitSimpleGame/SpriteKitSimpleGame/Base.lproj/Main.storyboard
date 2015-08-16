@@ -185,7 +185,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="about" translatesAutoresizingMaskIntoConstraints="NO" id="NRQ-JP-918">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="betterAbout" translatesAutoresizingMaskIntoConstraints="NO" id="NRQ-JP-918">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <animations/>
                             </imageView>
@@ -217,9 +217,9 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="NRQ-JP-918" secondAttribute="trailing" constant="-16" id="018-fG-PF2"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="NRQ-JP-918" secondAttribute="trailing" constant="-24" id="018-fG-PF2"/>
                             <constraint firstItem="Vxq-8E-d6T" firstAttribute="top" secondItem="NRQ-JP-918" secondAttribute="bottom" id="0G3-1d-hd5"/>
-                            <constraint firstItem="NRQ-JP-918" firstAttribute="leading" secondItem="Oam-XP-Qza" secondAttribute="leadingMargin" constant="-16" id="0aZ-Oz-OMh"/>
+                            <constraint firstItem="NRQ-JP-918" firstAttribute="leading" secondItem="Oam-XP-Qza" secondAttribute="leadingMargin" constant="-50" id="0aZ-Oz-OMh"/>
                             <constraint firstItem="Vxq-8E-d6T" firstAttribute="top" secondItem="zS9-id-GeF" secondAttribute="bottom" constant="20" id="4zo-1f-sGf"/>
                             <constraint firstItem="zS9-id-GeF" firstAttribute="leading" secondItem="Oam-XP-Qza" secondAttribute="leadingMargin" id="KCr-rk-eFU"/>
                             <constraint firstItem="NRQ-JP-918" firstAttribute="top" secondItem="feP-w8-F5D" secondAttribute="bottom" constant="-20" id="SFn-q9-RRO"/>
@@ -549,8 +549,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="about" width="2028" height="1080"/>
         <image name="about_button" width="500" height="500"/>
+        <image name="betterAbout" width="2028" height="1080"/>
         <image name="high_score_screen" width="2028" height="1080"/>
         <image name="newestMainscreen" width="2028" height="1080"/>
         <image name="play_button" width="500" height="500"/>
