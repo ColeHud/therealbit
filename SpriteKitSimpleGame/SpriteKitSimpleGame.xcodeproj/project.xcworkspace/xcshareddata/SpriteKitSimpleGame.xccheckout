@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>75CD5FB2-53D4-4EB1-BA9D-FD947AFFB538</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>SpriteKitSimpleGame</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>0401D307A98C11435C79F98A2014A910173A1554</key>
 		<string>https://github.com/ColeHud/therealbit.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>SpriteKitSimpleGame/SpriteKitSimpleGame.xcodeproj/project.xcworkspace</string>
+	<string>SpriteKitSimpleGame/SpriteKitSimpleGame.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>0401D307A98C11435C79F98A2014A910173A1554</key>

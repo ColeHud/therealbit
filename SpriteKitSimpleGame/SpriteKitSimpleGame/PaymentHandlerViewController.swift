@@ -8,6 +8,11 @@
 
 import UIKit
 
+//string length
+extension String {
+    var length: Int { return count(self)         }  // Swift 1.2
+}
+
 class PaymentHandlerViewController: UIViewController
 {
     //views
@@ -140,9 +145,23 @@ class PaymentHandlerViewController: UIViewController
         }
     }
     
+    
     //pay 25 cents and start the game
     @IBAction func payTwentyFiveCents(sender: AnyObject)
     {
+        //the user hasn't signed in yet
+        if(self.guid == "" || guid.length < 2)
+        {
+            //alert the user
+            var alert = UIAlertView(title: "Sign in", message: "You need to sign in before you can play", delegate: nil, cancelButtonTitle: "ok")
+            
+            // Move to the UI thread
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                // Show the alert
+                alert.show()
+            })
+
+        }
         
         
     }
