@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>75CD5FB2-53D4-4EB1-BA9D-FD947AFFB538</string>
+	<key>IDESourceControlProjectName</key>
+	<string>project</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>D051BF07A07AE27FB6286713AB303E8E9EFEB948</key>
+		<string>https://github.com/elizabethsiegle/bitcatcher.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>BitCatcher/SpriteKitSimpleGame/SpriteKitSimpleGame.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>D051BF07A07AE27FB6286713AB303E8E9EFEB948</key>
+		<string>../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/elizabethsiegle/bitcatcher.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>D051BF07A07AE27FB6286713AB303E8E9EFEB948</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>D051BF07A07AE27FB6286713AB303E8E9EFEB948</string>
+			<key>IDESourceControlWCCName</key>
+			<string>bitcatcher</string>
+		</dict>
+	</array>
+</dict>
+</plist>

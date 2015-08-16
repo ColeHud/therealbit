@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="15A244d" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="brj-kj-h7c">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <scenes>
+        <!--login-->
+        <scene sceneID="5hS-uk-g4J">
+            <objects>
+                <viewController title="login" id="brj-kj-h7c" customClass="LoginViewController" customModule="SpriteKitSimpleGame" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vea-Fg-yYC"/>
+                        <viewControllerLayoutGuide type="bottom" id="RK4-ho-FLv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2M1-I5-LGd">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="newestMainscreen" translatesAutoresizingMaskIntoConstraints="NO" id="rdl-XK-m8E">
+                                <rect key="frame" x="-16" y="0.0" width="632" height="600"/>
+                                <animations/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Fm-TA-7EF">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <animations/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mb4-yj-ar5" userLabel="hiscore">
+                                <rect key="frame" x="384" y="247" width="216" height="203"/>
+                                <animations/>
+                                <state key="normal" image="score_button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="center" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L85-By-eaq" userLabel="play">
+                                <rect key="frame" x="192" y="247" width="216" height="203"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="L85-By-eaq" secondAttribute="height" multiplier="1:1" id="PjI-jD-dFB"/>
+                                    <constraint firstAttribute="width" constant="160" id="rNx-Ef-n2g"/>
+                                    <constraint firstAttribute="width" secondItem="L85-By-eaq" secondAttribute="height" multiplier="4:1" id="trE-V2-aGC"/>
+                                </constraints>
+                                <state key="normal" image="play_button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="PjI-jD-dFB"/>
+                                        <exclude reference="rNx-Ef-n2g"/>
+                                        <exclude reference="trE-V2-aGC"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="PjI-jD-dFB"/>
+                                        <exclude reference="rNx-Ef-n2g"/>
+                                        <exclude reference="trE-V2-aGC"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <segue destination="sx4-lS-koG" kind="show" id="5bV-Xl-7Ez"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ppm-nb-Y6p" userLabel="about">
+                                <rect key="frame" x="0.0" y="247" width="216" height="203"/>
+                                <animations/>
+                                <state key="normal" image="about_button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" secondItem="L85-By-eaq" secondAttribute="height" multiplier="10:1" id="2Zb-FQ-XKY"/>
+                            <constraint firstAttribute="width" secondItem="L85-By-eaq" secondAttribute="height" multiplier="20:7" id="5Xe-4l-2Og"/>
+                            <constraint firstItem="rdl-XK-m8E" firstAttribute="leading" secondItem="0Fm-TA-7EF" secondAttribute="leading" constant="-166" id="Axv-ZS-5ua">
+                                <variation key="heightClass=compact" constant="0.0"/>
+                            </constraint>
+                            <constraint firstItem="rdl-XK-m8E" firstAttribute="trailing" secondItem="0Fm-TA-7EF" secondAttribute="trailing" constant="166" id="BFN-IL-WgP">
+                                <variation key="heightClass=compact" constant="0.0"/>
+                            </constraint>
+                            <constraint firstItem="L85-By-eaq" firstAttribute="leading" secondItem="Ppm-nb-Y6p" secondAttribute="trailing" constant="-24" id="BQd-AU-fa8"/>
+                            <constraint firstAttribute="height" secondItem="0Fm-TA-7EF" secondAttribute="height" multiplier="100:58.5" id="Cdj-Qc-0Ak"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="rdl-XK-m8E" secondAttribute="trailing" constant="-32" id="DU5-ah-l1N"/>
+                            <constraint firstItem="rdl-XK-m8E" firstAttribute="top" secondItem="0Fm-TA-7EF" secondAttribute="top" constant="-100" id="GOV-gD-6ub">
+                                <variation key="heightClass=compact" constant="0.0"/>
+                            </constraint>
+                            <constraint firstItem="Ppm-nb-Y6p" firstAttribute="leading" secondItem="2M1-I5-LGd" secondAttribute="leadingMargin" constant="-16" id="GOd-nl-7ql"/>
+                            <constraint firstItem="L85-By-eaq" firstAttribute="centerY" secondItem="0Fm-TA-7EF" secondAttribute="bottom" constant="-101" id="Iae-1G-ShW">
+                                <variation key="heightClass=compact" constant="0.0"/>
+                            </constraint>
+                            <constraint firstItem="Mb4-yj-ar5" firstAttribute="height" secondItem="L85-By-eaq" secondAttribute="height" id="O9V-TN-rld"/>
+                            <constraint firstItem="RK4-ho-FLv" firstAttribute="top" secondItem="rdl-XK-m8E" secondAttribute="bottom" id="T5D-w3-ezK"/>
+                            <constraint firstItem="rdl-XK-m8E" firstAttribute="top" secondItem="vea-Fg-yYC" secondAttribute="bottom" constant="-20" id="TJa-Im-Op5"/>
+                            <constraint firstItem="rdl-XK-m8E" firstAttribute="leading" secondItem="2M1-I5-LGd" secondAttribute="leadingMargin" constant="-32" id="Vch-fD-bKT"/>
+                            <constraint firstItem="Mb4-yj-ar5" firstAttribute="centerY" secondItem="L85-By-eaq" secondAttribute="centerY" constant="-119" id="X66-Tg-fOC">
+                                <variation key="heightClass=compact" constant="0.0"/>
+                            </constraint>
+                            <constraint firstAttribute="trailingMargin" secondItem="Mb4-yj-ar5" secondAttribute="trailing" constant="-16" id="ZfJ-9s-0pT"/>
+                            <constraint firstItem="Mb4-yj-ar5" firstAttribute="leading" secondItem="L85-By-eaq" secondAttribute="trailing" constant="-24" id="b0K-2U-1M9"/>
+                            <constraint firstItem="L85-By-eaq" firstAttribute="centerY" secondItem="Ppm-nb-Y6p" secondAttribute="centerY" constant="-0.5" id="iuh-s7-KsF">
+                                <variation key="heightClass=compact" constant="0.0"/>
+                            </constraint>
+                            <constraint firstItem="L85-By-eaq" firstAttribute="height" secondItem="Ppm-nb-Y6p" secondAttribute="height" id="piQ-9x-Tue"/>
+                            <constraint firstAttribute="centerX" secondItem="L85-By-eaq" secondAttribute="centerX" id="qf7-h6-Vt4"/>
+                            <constraint firstItem="Mb4-yj-ar5" firstAttribute="width" secondItem="L85-By-eaq" secondAttribute="width" id="tiY-ZQ-eQ6"/>
+                            <constraint firstItem="L85-By-eaq" firstAttribute="width" secondItem="Ppm-nb-Y6p" secondAttribute="width" id="wbD-aD-0vb"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="0Fm-TA-7EF"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="Cdj-Qc-0Ak"/>
+                                <exclude reference="Axv-ZS-5ua"/>
+                                <exclude reference="BFN-IL-WgP"/>
+                                <exclude reference="GOV-gD-6ub"/>
+                                <exclude reference="2Zb-FQ-XKY"/>
+                                <exclude reference="5Xe-4l-2Og"/>
+                                <exclude reference="Iae-1G-ShW"/>
+                                <exclude reference="iuh-s7-KsF"/>
+                                <exclude reference="piQ-9x-Tue"/>
+                                <exclude reference="qf7-h6-Vt4"/>
+                                <exclude reference="wbD-aD-0vb"/>
+                                <exclude reference="O9V-TN-rld"/>
+                                <exclude reference="X66-Tg-fOC"/>
+                                <exclude reference="tiY-ZQ-eQ6"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact">
+                            <mask key="subviews">
+                                <include reference="0Fm-TA-7EF"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="Cdj-Qc-0Ak"/>
+                                <include reference="Axv-ZS-5ua"/>
+                                <include reference="BFN-IL-WgP"/>
+                                <include reference="GOV-gD-6ub"/>
+                                <exclude reference="2Zb-FQ-XKY"/>
+                                <include reference="5Xe-4l-2Og"/>
+                                <exclude reference="BQd-AU-fa8"/>
+                                <include reference="Iae-1G-ShW"/>
+                                <include reference="iuh-s7-KsF"/>
+                                <include reference="piQ-9x-Tue"/>
+                                <include reference="qf7-h6-Vt4"/>
+                                <include reference="wbD-aD-0vb"/>
+                                <include reference="O9V-TN-rld"/>
+                                <include reference="X66-Tg-fOC"/>
+                                <exclude reference="b0K-2U-1M9"/>
+                                <include reference="tiY-ZQ-eQ6"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eAa-gG-kB4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-488" y="214"/>
+        </scene>
+        <!--paymentHandler-->
+        <scene sceneID="lZB-3S-VBC">
+            <objects>
+                <viewController title="paymentHandler" id="sx4-lS-koG" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xbX-Nq-bj1"/>
+                        <viewControllerLayoutGuide type="bottom" id="39d-nJ-4xu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="eXW-fs-XQ1">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mWy-Qe-XBv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-488" y="1065"/>
+        </scene>
+        <!--Game View Controller-->
+        <scene sceneID="CtS-rA-C9T">
+            <objects>
+                <viewController id="LVB-YS-i5n" customClass="GameViewController" customModule="SpriteKitSimpleGame" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="PCf-gQ-wO7"/>
+                        <viewControllerLayoutGuide type="bottom" id="b3d-qh-BLL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bdc-N1-crn" customClass="SKView">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="btX-cZ-eVz" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="288" y="213"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="about_button" width="500" height="500"/>
+        <image name="newestMainscreen" width="2028" height="1080"/>
+        <image name="play_button" width="500" height="500"/>
+        <image name="score_button" width="500" height="500"/>
+    </resources>
+</document>
