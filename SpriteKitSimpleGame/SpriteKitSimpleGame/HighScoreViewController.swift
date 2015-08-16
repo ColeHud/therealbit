@@ -11,6 +11,7 @@ import Parse
 
 class HighScoreViewController: UIViewController
 {
+    @IBOutlet var backButton: UIButton!
     @IBOutlet var label: UILabel!
     override func viewDidLoad()
     {
@@ -21,5 +22,11 @@ class HighScoreViewController: UIViewController
         var queryObject = query.getFirstObject()
         let highScore = queryObject?.valueForKey("score") as! Int
         label.text = "\(highScore)"
+        
+        //set up the back button
+        backButton.backgroundColor = UIColor.whiteColor()
+        backButton.layer.cornerRadius = 5
+        backButton.layer.borderWidth = 1
+        backButton.layer.borderColor = UIColor.blackColor().CGColor
     }
 }
