@@ -21,6 +21,10 @@
 		3571651019DB322700ED38A9 /* GameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3571650F19DB322700ED38A9 /* GameOverScene.swift */; };
 		ED353AF61B808A5000A923E7 /* high_score_screen.png in Resources */ = {isa = PBXBuildFile; fileRef = ED353AF51B808A5000A923E7 /* high_score_screen.png */; };
 		ED353AF81B808BD900A923E7 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED353AF71B808BD900A923E7 /* AboutViewController.swift */; };
+<<<<<<< HEAD
+=======
+		ED353AFA1B80953100A923E7 /* about.png in Resources */ = {isa = PBXBuildFile; fileRef = ED353AF91B80953100A923E7 /* about.png */; };
+>>>>>>> parent of 5144ec0... remembers users
 		ED3828471B801B40007E6976 /* mainScreenNew.png in Resources */ = {isa = PBXBuildFile; fileRef = ED3828461B801B40007E6976 /* mainScreenNew.png */; };
 		ED3828491B801B82007E6976 /* newestMainscreen.png in Resources */ = {isa = PBXBuildFile; fileRef = ED3828481B801B82007E6976 /* newestMainscreen.png */; };
 		ED535F741B8011AE00FF5C2B /* about_button.png in Resources */ = {isa = PBXBuildFile; fileRef = ED535F711B8011AE00FF5C2B /* about_button.png */; };
@@ -77,6 +81,10 @@
 		3571650F19DB322700ED38A9 /* GameOverScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverScene.swift; sourceTree = "<group>"; };
 		ED353AF51B808A5000A923E7 /* high_score_screen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = high_score_screen.png; path = ../../Assets/high_score_screen.png; sourceTree = "<group>"; };
 		ED353AF71B808BD900A923E7 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+<<<<<<< HEAD
+=======
+		ED353AF91B80953100A923E7 /* about.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = about.png; path = ../../Assets/about.png; sourceTree = "<group>"; };
+>>>>>>> parent of 5144ec0... remembers users
 		ED3828461B801B40007E6976 /* mainScreenNew.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mainScreenNew.png; path = ../../Assets/mainScreenNew.png; sourceTree = "<group>"; };
 		ED3828481B801B82007E6976 /* newestMainscreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = newestMainscreen.png; path = ../../Assets/newestMainscreen.png; sourceTree = "<group>"; };
 		ED535F711B8011AE00FF5C2B /* about_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = about_button.png; path = ../../Assets/about_button.png; sourceTree = "<group>"; };
@@ -178,6 +186,10 @@
 				ED3828461B801B40007E6976 /* mainScreenNew.png */,
 				ED6305611B8083B300A53027 /* high_score_screen.png */,
 				ED353AF51B808A5000A923E7 /* high_score_screen.png */,
+<<<<<<< HEAD
+=======
+				ED353AF91B80953100A923E7 /* about.png */,
+>>>>>>> parent of 5144ec0... remembers users
 				357164EF19DB1E4800ED38A9 /* Images.xcassets */,
 				ED63055F1B80736400A53027 /* Retro Computer_DEMO.ttf */,
 				357164E619DB1E4800ED38A9 /* GameScene.sks */,
@@ -322,6 +334,7 @@
 				ED535F751B8011AE00FF5C2B /* play_button.png in Resources */,
 				357164E719DB1E4800ED38A9 /* GameScene.sks in Resources */,
 				ED3828471B801B40007E6976 /* mainScreenNew.png in Resources */,
+				ED353AFA1B80953100A923E7 /* about.png in Resources */,
 				ED353AF61B808A5000A923E7 /* high_score_screen.png in Resources */,
 				ED535F761B8011AE00FF5C2B /* score_button.png in Resources */,
 				357164EE19DB1E4800ED38A9 /* Main.storyboard in Resources */,
