@@ -8,7 +8,7 @@ Parse.initialize("T7IdleWlnGMMAnwREm9clA8UogD46ZOIKnDq4t8Y", "7j1Dckyuv2QIiKbwgI
 var app = new Parse(options);
 
 //get the address of the person with the most points
-var getWinnerAddress = function()
+var getWinnerAddress = function(cb)
 {
 	var HighScore = Parse.Object.extend("HighScore");
 	var query = new Parse.Query(HighScore);
@@ -18,10 +18,11 @@ var getWinnerAddress = function()
    		 	alert("Successfully retrieved " + results.length + " scores");
     		// Do something with the returned Parse.Object values
       			var object = results[0];
-      			return object.get('address'));
+      			cb(null, object.get('address')));
   			},
   			error: function(error) {
   	  		alert("Error: " + error.code + " " + error.message);
+  	  		cb(error);
   		}
 	});
 }
@@ -37,16 +38,24 @@ var payTheWinner = function(address)
 			'from': '1NuL6cSsndGRCEk9dijAa9v7ysqo4qQax5',
 			'fee': 100
 		}
+		myWallet.send(options, function(err, data){
+			console.log("Winner Paid");
+		});
 	});
 }
 
 //schedule the daily paying of the winner
 var rule = new schedule.RecurrenceRule();
 
-rule.dayOfWeek = [0, new schedule.Range(0, 6)];
+rule.dayOfWeek = [0, new schedule.Range(1, 6)];
 rule.hour = 23;
 rule.minute = 59;
 
 var j = schedule.scheduleJob(rule, function(){
-    payTheWinner(getWinnerAddress());
+	getWinnerAddress(function(err, address) {
+		if (err) {
+			return console.error(err.stack);
+		}
+    	payTheWinner(address);
+	})
 });
