@@ -51,8 +51,8 @@ var payTheWinner = function(address)
 var rule = new schedule.RecurrenceRule();
 
 rule.dayOfWeek = [0, new schedule.Range(1, 6)];
-rule.hour = 9;
-rule.minute = 5;
+rule.hour = 23;
+rule.minute = 59;
 
 var j = schedule.scheduleJob(rule, function(){
 	getWinnerAddress(function(err, address) {
