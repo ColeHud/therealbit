@@ -18,7 +18,6 @@ class PaymentHandlerViewController: UIViewController
     @IBOutlet var twentyFiveCentButton: UIButton!
     var selectedSegment = 0
     
-    
     //dismiss the keyboard
     func dismissKeyboard()
     {
@@ -91,10 +90,24 @@ class PaymentHandlerViewController: UIViewController
                     println(error)
                     println(response)
                     println(NSString(data: data, encoding: NSUTF8StringEncoding))
+                    
+                    //alert the user
+                    var alert = UIAlertView(title: "Error", message: "Sorry, something is wrong", delegate: nil, cancelButtonTitle: "ok")
+                    
+                    // Move to the UI thread
+                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                        // Show the alert
+                        alert.show()
+                    })
+
                     return
                 }
-                println(response)
-                //println(NSString(data: data, encoding: NSUTF8StringEncoding))
+                //println(response)
+                println(NSString(data: data, encoding: NSUTF8StringEncoding))
+                var error = NSErrorPointer()
+                var json = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: error)
+                
+                
             }
             
             task.resume()
