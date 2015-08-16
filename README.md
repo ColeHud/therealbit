@@ -24,5 +24,5 @@ The game controls are relatively esay.
 Art, Sprites, Icon, and Mockups were Designed by Tim Kaing
 --Had a lot of inspiration from classic platformers such as Earthbound and Bubble Bobble
 
-We hope you enjoy our App! <br>
+**We hope you enjoy our App!**<br> <br>
 <img src="https://github.com/ColeHud/therealbit/blob/master/Assets/App_Icon.png" width="250">
