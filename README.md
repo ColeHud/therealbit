@@ -4,7 +4,7 @@
 Cole Hudson, Tim Kaing, Elizabeth Siegle, Amanda Truong, and Adil Virani
 
 **What we built:** 
-We created BitCatcher, an iOS App that was developed with Sketch which use the Blockchain API. 
+We created BitCatcher, an iOS App that was developed with Sketch which use the Braintree & Blockchain API. 
 <img src="https://github.com/ColeHud/therealbit/blob/master/Assets/mockup1.jpg">
 
 **Why we created it:** 
