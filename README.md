@@ -1,5 +1,4 @@
 # BitCatcher
-Hack the Planet!!!
 
 **Who created it:** 
 Cole Hudson, Tim Kaing, Elizabeth Siegle, Amanda Truong, and Adil Virani
@@ -25,4 +24,7 @@ Art, Sprites, Icon, and Mockups were Designed by Tim Kaing
 --Had a lot of inspiration from classic platformers such as Earthbound and Bubble Bobble
 
 **We hope you enjoy our App!**<br> <br>
+
+**And a special thanks to..."
+Major League Hacking and their wonderful sponsors for making this incredible event possible!
 <img src="https://github.com/ColeHud/therealbit/blob/master/Assets/App_Icon.png" width="250">
