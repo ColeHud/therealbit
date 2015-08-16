@@ -172,10 +172,135 @@
                     <view key="view" contentMode="scaleToFill" id="eXW-fs-XQ1">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JNE-jn-Xi2">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <animations/>
+                                <state key="normal" title="25¢">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="heightClass=compact" misplaced="YES">
+                                    <rect key="frame" x="287" y="350" width="27" height="30"/>
+                                </variation>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fnT-Zm-WpW">
+                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="heightClass=compact" misplaced="YES">
+                                    <rect key="frame" x="16" y="56" width="568" height="30"/>
+                                </variation>
+                            </textField>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="y48-4X-Ct5">
+                                <rect key="frame" x="-61" y="-14" width="123" height="29"/>
+                                <animations/>
+                                <segments>
+                                    <segment title="Create a new Wallet"/>
+                                    <segment title="Pay from existing wallet"/>
+                                </segments>
+                                <variation key="heightClass=compact" misplaced="YES">
+                                    <rect key="frame" x="143" y="20" width="315" height="29"/>
+                                </variation>
+                            </segmentedControl>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tp8-ln-g5m">
+                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                <animations/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <variation key="heightClass=compact" misplaced="YES">
+                                    <rect key="frame" x="16" y="94" width="568" height="30"/>
+                                </variation>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bnv-lB-tJi">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Login/SignUp">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="heightClass=compact" misplaced="YES">
+                                    <rect key="frame" x="253" y="132" width="95" height="30"/>
+                                </variation>
+                            </button>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="Bnv-lB-tJi" secondAttribute="centerX" constant="-0.5" id="4Zp-3e-N8v"/>
+                            <constraint firstAttribute="centerX" secondItem="y48-4X-Ct5" secondAttribute="centerX" constant="-0.5" id="8gs-6l-ggp"/>
+                            <constraint firstItem="Tp8-ln-g5m" firstAttribute="top" secondItem="fnT-Zm-WpW" secondAttribute="bottom" constant="8" id="ANx-gg-xBv"/>
+                            <constraint firstItem="fnT-Zm-WpW" firstAttribute="top" secondItem="y48-4X-Ct5" secondAttribute="bottom" constant="8" id="Abg-4R-3zU"/>
+                            <constraint firstItem="y48-4X-Ct5" firstAttribute="top" secondItem="xbX-Nq-bj1" secondAttribute="bottom" id="Ial-0I-PhJ">
+                                <variation key="heightClass=compact" constant="10"/>
+                            </constraint>
+                            <constraint firstItem="Tp8-ln-g5m" firstAttribute="trailing" secondItem="eXW-fs-XQ1" secondAttribute="trailingMargin" id="IgK-IP-lII"/>
+                            <constraint firstAttribute="centerX" secondItem="JNE-jn-Xi2" secondAttribute="centerX" constant="-0.5" id="TW4-sS-u7F"/>
+                            <constraint firstItem="y48-4X-Ct5" firstAttribute="top" secondItem="xbX-Nq-bj1" secondAttribute="bottom" id="a5F-Mm-jOA"/>
+                            <constraint firstItem="fnT-Zm-WpW" firstAttribute="trailing" secondItem="eXW-fs-XQ1" secondAttribute="trailingMargin" id="btX-yc-Xey"/>
+                            <constraint firstItem="fnT-Zm-WpW" firstAttribute="leading" secondItem="eXW-fs-XQ1" secondAttribute="leadingMargin" id="dtD-4Q-UFO"/>
+                            <constraint firstItem="Tp8-ln-g5m" firstAttribute="leading" secondItem="eXW-fs-XQ1" secondAttribute="leadingMargin" id="gKX-y8-6M8"/>
+                            <constraint firstItem="39d-nJ-4xu" firstAttribute="top" secondItem="JNE-jn-Xi2" secondAttribute="bottom" constant="20" id="hBE-a3-rko"/>
+                            <constraint firstItem="y48-4X-Ct5" firstAttribute="top" secondItem="xbX-Nq-bj1" secondAttribute="bottom" id="pT6-gL-grr"/>
+                            <constraint firstItem="Bnv-lB-tJi" firstAttribute="top" secondItem="Tp8-ln-g5m" secondAttribute="bottom" constant="8" id="yDO-bM-kip"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="JNE-jn-Xi2"/>
+                                <exclude reference="fnT-Zm-WpW"/>
+                                <exclude reference="y48-4X-Ct5"/>
+                                <exclude reference="Tp8-ln-g5m"/>
+                                <exclude reference="Bnv-lB-tJi"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="Abg-4R-3zU"/>
+                                <exclude reference="btX-yc-Xey"/>
+                                <exclude reference="dtD-4Q-UFO"/>
+                                <exclude reference="ANx-gg-xBv"/>
+                                <exclude reference="IgK-IP-lII"/>
+                                <exclude reference="gKX-y8-6M8"/>
+                                <exclude reference="8gs-6l-ggp"/>
+                                <exclude reference="Ial-0I-PhJ"/>
+                                <exclude reference="a5F-Mm-jOA"/>
+                                <exclude reference="pT6-gL-grr"/>
+                                <exclude reference="4Zp-3e-N8v"/>
+                                <exclude reference="yDO-bM-kip"/>
+                                <exclude reference="hBE-a3-rko"/>
+                                <exclude reference="TW4-sS-u7F"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact">
+                            <mask key="subviews">
+                                <include reference="JNE-jn-Xi2"/>
+                                <include reference="fnT-Zm-WpW"/>
+                                <include reference="y48-4X-Ct5"/>
+                                <include reference="Tp8-ln-g5m"/>
+                                <include reference="Bnv-lB-tJi"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="Abg-4R-3zU"/>
+                                <include reference="btX-yc-Xey"/>
+                                <include reference="dtD-4Q-UFO"/>
+                                <include reference="ANx-gg-xBv"/>
+                                <include reference="IgK-IP-lII"/>
+                                <include reference="gKX-y8-6M8"/>
+                                <include reference="8gs-6l-ggp"/>
+                                <include reference="Ial-0I-PhJ"/>
+                                <exclude reference="a5F-Mm-jOA"/>
+                                <exclude reference="pT6-gL-grr"/>
+                                <include reference="4Zp-3e-N8v"/>
+                                <include reference="yDO-bM-kip"/>
+                                <include reference="hBE-a3-rko"/>
+                                <include reference="TW4-sS-u7F"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
+                        <outlet property="emailAndAddress" destination="fnT-Zm-WpW" id="yRv-fD-Mws"/>
+                        <outlet property="loginAndSignup" destination="Bnv-lB-tJi" id="cmo-Ym-xXL"/>
+                        <outlet property="passwordField" destination="Tp8-ln-g5m" id="Izc-hU-oFg"/>
+                        <outlet property="segmentedControl" destination="y48-4X-Ct5" id="gdC-0p-Vfh"/>
+                        <outlet property="twentyFiveCentButton" destination="JNE-jn-Xi2" id="Z0m-3S-l8t"/>
                         <segue destination="LVB-YS-i5n" kind="presentation" identifier="gameOn" id="gfx-Pa-LWI"/>
                     </connections>
                 </viewController>
