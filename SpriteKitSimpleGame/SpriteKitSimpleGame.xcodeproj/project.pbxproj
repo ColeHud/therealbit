@@ -40,6 +40,8 @@
 		EDCA63FB1B7FFAA200177C97 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EDCA63FA1B7FFAA200177C97 /* libz.dylib */; };
 		EDCA63FD1B7FFAA800177C97 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EDCA63FC1B7FFAA800177C97 /* libsqlite3.dylib */; };
 		EDCA63FF1B7FFDEA00177C97 /* RestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCA63FE1B7FFDEA00177C97 /* RestHelper.swift */; };
+		EDD035841B8048C3005A8A6D /* PaymentHandlerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD035831B8048C3005A8A6D /* PaymentHandlerViewController.swift */; };
+		EDD035861B804998005A8A6D /* HighScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD035851B804998005A8A6D /* HighScoreViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +92,8 @@
 		EDCA63FA1B7FFAA200177C97 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		EDCA63FC1B7FFAA800177C97 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		EDCA63FE1B7FFDEA00177C97 /* RestHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestHelper.swift; sourceTree = "<group>"; };
+		EDD035831B8048C3005A8A6D /* PaymentHandlerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentHandlerViewController.swift; sourceTree = "<group>"; };
+		EDD035851B804998005A8A6D /* HighScoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HighScoreViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,8 +161,6 @@
 			children = (
 				3571650819DB1F5500ED38A9 /* Sounds */,
 				3571650B19DB1F5500ED38A9 /* sprites.atlas */,
-				357164E419DB1E4800ED38A9 /* AppDelegate.swift */,
-				EDCA63FE1B7FFDEA00177C97 /* RestHelper.swift */,
 				EDCA63E21B7FA26300177C97 /* background.png */,
 				EDCA63E01B7F920100177C97 /* bitplayer.png */,
 				ED3828481B801B82007E6976 /* newestMainscreen.png */,
@@ -166,13 +168,17 @@
 				ED535F721B8011AE00FF5C2B /* play_button.png */,
 				ED535F731B8011AE00FF5C2B /* score_button.png */,
 				ED3828461B801B40007E6976 /* mainScreenNew.png */,
-				EDCA63D21B7F770B00177C97 /* LoginViewController.swift */,
+				357164EF19DB1E4800ED38A9 /* Images.xcassets */,
 				357164E619DB1E4800ED38A9 /* GameScene.sks */,
+				357164E419DB1E4800ED38A9 /* AppDelegate.swift */,
+				EDCA63FE1B7FFDEA00177C97 /* RestHelper.swift */,
+				EDD035851B804998005A8A6D /* HighScoreViewController.swift */,
+				EDD035831B8048C3005A8A6D /* PaymentHandlerViewController.swift */,
+				EDCA63D21B7F770B00177C97 /* LoginViewController.swift */,
 				357164E819DB1E4800ED38A9 /* GameScene.swift */,
 				3571650F19DB322700ED38A9 /* GameOverScene.swift */,
 				357164EA19DB1E4800ED38A9 /* GameViewController.swift */,
 				357164EC19DB1E4800ED38A9 /* Main.storyboard */,
-				357164EF19DB1E4800ED38A9 /* Images.xcassets */,
 				357164F119DB1E4800ED38A9 /* LaunchScreen.xib */,
 				357164E219DB1E4800ED38A9 /* Supporting Files */,
 			);
@@ -327,6 +333,8 @@
 				357164E919DB1E4800ED38A9 /* GameScene.swift in Sources */,
 				357164EB19DB1E4800ED38A9 /* GameViewController.swift in Sources */,
 				3571651019DB322700ED38A9 /* GameOverScene.swift in Sources */,
+				EDD035861B804998005A8A6D /* HighScoreViewController.swift in Sources */,
+				EDD035841B8048C3005A8A6D /* PaymentHandlerViewController.swift in Sources */,
 				EDCA63D31B7F770B00177C97 /* LoginViewController.swift in Sources */,
 				357164E519DB1E4800ED38A9 /* AppDelegate.swift in Sources */,
 				EDCA63FF1B7FFDEA00177C97 /* RestHelper.swift in Sources */,
