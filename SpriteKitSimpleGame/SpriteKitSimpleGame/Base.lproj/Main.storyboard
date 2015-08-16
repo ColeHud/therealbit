@@ -182,8 +182,13 @@
                         <viewControllerLayoutGuide type="bottom" id="Vxq-8E-d6T"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Oam-XP-Qza">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="about" translatesAutoresizingMaskIntoConstraints="NO" id="NRQ-JP-918">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <animations/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zS9-id-GeF">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <animations/>
@@ -208,10 +213,6 @@
                                     <segue destination="brj-kj-h7c" kind="show" id="Wrk-dP-mkm"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NRQ-JP-918">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <animations/>
-                            </imageView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -225,30 +226,30 @@
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="zS9-id-GeF"/>
                                 <exclude reference="NRQ-JP-918"/>
+                                <exclude reference="zS9-id-GeF"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="0G3-1d-hd5"/>
+                                <exclude reference="4zo-1f-sGf"/>
+                                <exclude reference="KCr-rk-eFU"/>
                                 <exclude reference="018-fG-PF2"/>
                                 <exclude reference="0aZ-Oz-OMh"/>
                                 <exclude reference="SFn-q9-RRO"/>
-                                <exclude reference="KCr-rk-eFU"/>
-                                <exclude reference="0G3-1d-hd5"/>
-                                <exclude reference="4zo-1f-sGf"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=compact">
                             <mask key="subviews">
-                                <include reference="zS9-id-GeF"/>
                                 <include reference="NRQ-JP-918"/>
+                                <include reference="zS9-id-GeF"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="0G3-1d-hd5"/>
+                                <include reference="4zo-1f-sGf"/>
+                                <include reference="KCr-rk-eFU"/>
                                 <include reference="018-fG-PF2"/>
                                 <include reference="0aZ-Oz-OMh"/>
                                 <include reference="SFn-q9-RRO"/>
-                                <include reference="KCr-rk-eFU"/>
-                                <include reference="0G3-1d-hd5"/>
-                                <include reference="4zo-1f-sGf"/>
                             </mask>
                         </variation>
                     </view>
@@ -548,6 +549,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="about" width="2028" height="1080"/>
         <image name="about_button" width="500" height="500"/>
         <image name="high_score_screen" width="2028" height="1080"/>
         <image name="newestMainscreen" width="2028" height="1080"/>
