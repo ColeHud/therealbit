@@ -82,6 +82,9 @@ struct Layer {
 
 class GameScene: SKScene, SKPhysicsContactDelegate
 {
+    //viewcontroller
+    var viewController: GameViewController?
+    
     //score
     var score = 0
     
@@ -166,6 +169,38 @@ class GameScene: SKScene, SKPhysicsContactDelegate
         return timeInterval
     }
     
+    func highScoreChecker() -> Bool
+    {
+        println("Score: \(self.score)")
+        
+        //check to see if you got the hi-score
+        var query = PFQuery(className: "HighScore")
+        var highScoreQueryObject = query.getFirstObject()
+        let highScore = highScoreQueryObject?.objectForKey("score") as! Int
+        
+        //check if your score is higher than the high score
+        if(self.score > highScore)
+        {
+            println("you have the high score")
+            /*
+            
+            HIGH SCORES NEED SOME FORM OF ID
+            
+            
+            */
+            //save the new high score
+            if let highScoreQueryObject = highScoreQueryObject{
+                highScoreQueryObject["score"] = self.score
+                highScoreQueryObject.saveInBackground()
+            }
+            return true
+        }
+        
+        return false
+    }
+    
+    
+    
     func addCoin()
     {
         // Create sprite
@@ -188,7 +223,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate
         addChild(coin)
         
         // Determine speed of the monster
-        let actualDuration = random(min: CGFloat(20.0), max: CGFloat(20.0))
+        let actualDuration = random(min: CGFloat(10.0), max: CGFloat(10.0))
         
         // Create the actions
         let actionMove = SKAction.moveTo(CGPoint(x: actualX, y: 0 - coin.size.height), duration: NSTimeInterval(actualDuration))
@@ -197,12 +232,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate
         
         let loseAction = SKAction.runBlock()
             {
-                //check to see if you got the hi-score
-                var query = PFQuery(className: "HighScore")
-                var highScoreQueryObject = query.getFirstObject()
-                
+                let didGetHighScore = self.highScoreChecker()
                 let reveal = SKTransition.fadeWithDuration(0.5)
-                let gameOverScene = GameOverScene(size: self.size, won: false)
+                let gameOverScene = GameOverScene(size: self.size, won: didGetHighScore)
+                gameOverScene.viewController = self.viewController
                 self.view?.presentScene(gameOverScene, transition: reveal)
         }
         coin.runAction(SKAction.sequence([actionMove, loseAction, actionMoveDone]))
@@ -231,7 +264,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate
         addChild(bill)
         
         // Determine speed of the monster
-        let actualDuration = random(min: CGFloat(20.0), max: CGFloat(20.0))
+        let actualDuration = random(min: CGFloat(10.0), max: CGFloat(10.0))
         
         // Create the actions
         let actionMove = SKAction.moveTo(CGPoint(x: actualX, y: 0 - bill.size.height), duration: NSTimeInterval(actualDuration))
@@ -240,8 +273,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate
         
         let loseAction = SKAction.runBlock()
             {
+                let didGetHighScore = self.highScoreChecker()
                 let reveal = SKTransition.fadeWithDuration(0.5)
-                let gameOverScene = GameOverScene(size: self.size, won: false)
+                let gameOverScene = GameOverScene(size: self.size, won: didGetHighScore)
+                gameOverScene.viewController = self.viewController
                 self.view?.presentScene(gameOverScene, transition: reveal)
         }
         bill.runAction(SKAction.sequence([actionMove, loseAction, actionMoveDone]))

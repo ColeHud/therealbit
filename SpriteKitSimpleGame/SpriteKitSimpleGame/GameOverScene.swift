@@ -6,15 +6,23 @@ import UIKit
 
 class GameOverScene: SKScene
 {
+    var viewController: GameViewController?
+    
+    func blank()
+    {
+        
+    }
+    
   init(size: CGSize, won:Bool)
   {
     super.init(size: size)
+    
     
     // 1
     backgroundColor = SKColor.whiteColor()
     
     // 2
-    var message = won ? "You Won!" : "Failure!!!"
+    var message = won ? "You hold the HIGH SCORE!!!" : "Try again 😕"
     
     // 3
     let label = SKLabelNode(fontNamed: "Helvetica")
@@ -28,10 +36,9 @@ class GameOverScene: SKScene
     runAction(SKAction.sequence([
       SKAction.waitForDuration(3.0),
       SKAction.runBlock() {
-        // 5
-        let reveal = SKTransition.flipHorizontalWithDuration(0.5)
-        let scene = GameScene(size: size)
-        self.view?.presentScene(scene, transition:reveal)
+        
+        println("attempt to segue")
+        self.viewController?.performSegueWithIdentifier("endGame", sender: self.viewController)
       }
     ]))
     

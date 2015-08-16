@@ -11,7 +11,7 @@
         <!--login-->
         <scene sceneID="5hS-uk-g4J">
             <objects>
-                <viewController title="login" id="brj-kj-h7c" customClass="LoginViewController" customModule="SpriteKitSimpleGame" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" title="login" useStoryboardIdentifierAsRestorationIdentifier="YES" id="brj-kj-h7c" customClass="LoginViewController" customModule="SpriteKitSimpleGame" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="vea-Fg-yYC"/>
                         <viewControllerLayoutGuide type="bottom" id="RK4-ho-FLv"/>
@@ -62,7 +62,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <segue destination="LVB-YS-i5n" kind="show" id="ikE-iQ-jB9"/>
+                                    <segue destination="LVB-YS-i5n" kind="presentation" id="ikE-iQ-jB9"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ppm-nb-Y6p" userLabel="about">
@@ -159,7 +159,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eAa-gG-kB4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-488" y="214"/>
+            <point key="canvasLocation" x="-510" y="213"/>
         </scene>
         <!--paymentHandler-->
         <scene sceneID="lZB-3S-VBC">
@@ -194,6 +194,9 @@
                         <animations/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <segue destination="brj-kj-h7c" kind="presentation" identifier="endGame" id="9YP-ua-P65"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="btX-cZ-eVz" sceneMemberID="firstResponder"/>
             </objects>
