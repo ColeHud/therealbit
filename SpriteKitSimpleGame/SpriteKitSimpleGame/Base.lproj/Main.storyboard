@@ -62,7 +62,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <segue destination="sx4-lS-koG" kind="show" id="5bV-Xl-7Ez"/>
+                                    <segue destination="LVB-YS-i5n" kind="show" id="ikE-iQ-jB9"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ppm-nb-Y6p" userLabel="about">
@@ -170,6 +170,7 @@
                         <viewControllerLayoutGuide type="bottom" id="39d-nJ-4xu"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="eXW-fs-XQ1">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

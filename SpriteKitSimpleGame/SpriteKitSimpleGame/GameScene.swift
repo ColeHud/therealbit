@@ -6,7 +6,8 @@ import Bolts
 
 var backgroundMusicPlayer: AVAudioPlayer!
 
-func playBackgroundMusic(filename: String){
+func playBackgroundMusic(filename: String)
+{
     let url = NSBundle.mainBundle().URLForResource(
         filename, withExtension: nil)
     if (url == nil) {
@@ -198,7 +199,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate
             {
                 //check to see if you got the hi-score
                 var query = PFQuery(className: "HighScore")
-                var highScore = query.getFirstObject()
+                var highScoreQueryObject = query.getFirstObject()
                 
                 let reveal = SKTransition.fadeWithDuration(0.5)
                 let gameOverScene = GameOverScene(size: self.size, won: false)

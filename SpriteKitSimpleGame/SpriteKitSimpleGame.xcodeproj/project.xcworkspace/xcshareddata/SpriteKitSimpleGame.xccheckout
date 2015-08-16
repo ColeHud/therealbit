@@ -7,34 +7,34 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>75CD5FB2-53D4-4EB1-BA9D-FD947AFFB538</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>SpriteKitSimpleGame</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>D051BF07A07AE27FB6286713AB303E8E9EFEB948</key>
-		<string>https://github.com/elizabethsiegle/bitcatcher.git</string>
+		<key>0401D307A98C11435C79F98A2014A910173A1554</key>
+		<string>https://github.com/ColeHud/therealbit.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>BitCatcher/SpriteKitSimpleGame/SpriteKitSimpleGame.xcodeproj/project.xcworkspace</string>
+	<string>SpriteKitSimpleGame/SpriteKitSimpleGame.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>D051BF07A07AE27FB6286713AB303E8E9EFEB948</key>
-		<string>../../../..</string>
+		<key>0401D307A98C11435C79F98A2014A910173A1554</key>
+		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/elizabethsiegle/bitcatcher.git</string>
+	<string>https://github.com/ColeHud/therealbit.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>D051BF07A07AE27FB6286713AB303E8E9EFEB948</string>
+	<string>0401D307A98C11435C79F98A2014A910173A1554</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>D051BF07A07AE27FB6286713AB303E8E9EFEB948</string>
+			<string>0401D307A98C11435C79F98A2014A910173A1554</string>
 			<key>IDESourceControlWCCName</key>
-			<string>bitcatcher</string>
+			<string>therealbit</string>
 		</dict>
 	</array>
 </dict>
